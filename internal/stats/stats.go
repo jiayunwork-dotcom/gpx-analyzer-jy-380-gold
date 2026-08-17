@@ -49,7 +49,7 @@ func Analyze(points []Point) (Stats, error) {
 	t1, err1 := time.Parse(timeLayout, points[len(points)-1].Time)
 	if err0 == nil && err1 == nil {
 		dur := t1.Sub(t0)
-		s.DurationMin = dur.Hours()
+		s.DurationMin = dur.Minutes()
 		hours := dur.Hours()
 		if hours > 0 {
 			s.AvgSpeed = dist / hours
